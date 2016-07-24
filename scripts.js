@@ -32,6 +32,11 @@ $(document).ready(function() {
 
         //if the value is a number
         if (value.charCodeAt(0) >= 48 && value.charCodeAt(0) <= 57) {
+            //starts new calculation if history is empty
+            if(history.text() == "" && parseFloat(resultScreen.text()) == result){
+                result = 0;
+                resultScreen.text("");
+            }
             num(parseInt(value));
         } 
         //if del key is pressed
